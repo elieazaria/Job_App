@@ -7,7 +7,7 @@ const JobCardView = () => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity onPress={() => navigation.navigate("JobDetails")}>
-      <View style={styles.card}>
+      <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
             source={require("../../../images/photography.jpg")}
@@ -19,7 +19,7 @@ const JobCardView = () => {
             Photographe
           </Text>
           <Text style={styles.description} numberOfLines={1}>
-            Notre prestation consiste
+            Nampoina Raz
           </Text>
         </View>
       </View>
@@ -30,24 +30,29 @@ const JobCardView = () => {
 export default JobCardView;
 
 const styles = StyleSheet.create({
-  card: {
+  container: {
     height: 200,
-    width: 200,
-    margin: 10,
-    backgroundColor: COLORS.secondary,
+    width: 240,
+    marginEnd: 22,
+    backgroundColor: COLORS.tertiary,
     borderRadius: 8,
+    shadowColor: "#000",
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    elevation: 3,
   },
   imageContainer: {
     flex: 1,
-    width: 200,
+    width: 230,
     marginLeft: SIZES.small / 2,
     marginTop: SIZES.small / 2,
     borderRadius: SIZES.small,
     overflow: "hidden",
   },
   image: {
-    width: "100%",
-    height: "100%",
+    height: "200%",
+    width: "200%",
     aspectRatio: 1,
     resizeMode: "cover",
   },

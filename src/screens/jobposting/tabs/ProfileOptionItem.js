@@ -5,6 +5,7 @@ import {
   moderateVerticalScale,
   scale,
 } from "react-native-size-matters";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const ProfileOptionItem = ({ title, icon, onClick }) => {
   return (
@@ -19,8 +20,9 @@ const ProfileOptionItem = ({ title, icon, onClick }) => {
       }}
       onPress={() => onClick()}
     >
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <Image source={icon} style={{ width: scale(50), height: scale(50) }} />
+      <View style={{ flexDirection: "row", alignItems: "center", margin: 7 }}>
+        <Image source={icon} style={{ width: scale(30), height: scale(30) }} />
+
         <Text
           style={{ marginLeft: moderateScale(15), fontSize: moderateScale(18) }}
         >
@@ -29,7 +31,7 @@ const ProfileOptionItem = ({ title, icon, onClick }) => {
       </View>
       <Image
         source={require("../../../images/angle-right.png")}
-        style={{ width: scale(10), height: scale(10) }}
+        style={{ width: scale(20), height: scale(20) }}
       />
     </TouchableOpacity>
   );

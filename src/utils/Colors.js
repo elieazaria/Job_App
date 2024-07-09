@@ -6,9 +6,9 @@ export const BG_COLOR = "#FFFFFF";
 export const TEXT_COLOR = "#000000";
 
 const COLORS = {
-  primary: "#013C64",
-  secondary: "#B6F3F6",
-  tertiary: "#B6F3F6",
+  primary: "#059212",
+  secondary: "#2AC843",
+  tertiary: "#EEFFEE",
 
   gray: "#83829A",
   gray2: "#C1C0C8",

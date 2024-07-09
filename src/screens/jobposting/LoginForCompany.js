@@ -122,7 +122,8 @@ const LoginForCompany = () => {
         title={"Se connecter"}
         onClick={() => {
           if (validate()) {
-            loginUser();
+            navigation.navigate("DashBoardForCompany");
+            //loginUser();
           }
         }}
       />

@@ -14,7 +14,7 @@ const Splash = () => {
   const navigation = useNavigation();
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate("DashBoardForCompany");
+      navigation.navigate("SelectUser");
     }, 3000);
   }, []);
   /*
@@ -36,6 +36,10 @@ const Splash = () => {
         style={styles.logo}
       />
       <Text style={styles.name}> Ny Asako </Text>
+      <Image
+        source={require("../../images/logo ispm.jpg")}
+        style={styles.logo}
+      />
       <Text style={styles.slogan}> Votre carrière, notre priorité</Text>
     </View>
   );

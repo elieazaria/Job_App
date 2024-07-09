@@ -1,19 +1,43 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Linking,
+} from "react-native";
 import React from "react";
+import { Permissions } from "expo";
 import { moderateScale, scale } from "react-native-size-matters";
 import { COLORS, SIZES } from "../../../utils/Colors";
 import CustomSolidBtn from "../../../common/CustomSolidBtn";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { useNavigation } from "@react-navigation/native";
 
-const JobDetails = ({ navigation }) => {
+const JobDetails = () => {
+  const navigation = useNavigation();
+  const phoneNumber = "+261326143007";
+  const makePhoneCall = () => {
+    let phoneUrl = "tel:${phoneNumber}";
+    Linking.canOpenURL(phoneUrl)
+      .then((supported) => {
+        if (supported) {
+          Linking.openURL(phoneUrl);
+        } else {
+          console.log(" le telephone ne peut pas ouvrir cet url");
+        }
+      })
+      .catch((err) => console.error("Erreur", err));
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.upperRow}>
-        <TouchableOpacity onPress={() => navigation.goBack}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="chevron-back-circle" size={30} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.goBack}>
-          <Ionicons name="heart" size={30} color={COLORS.primary} />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Ionicons name="heart" size={30} color="red" />
         </TouchableOpacity>
       </View>
       <View style={styles.ImgContainer}>
@@ -42,10 +66,15 @@ const JobDetails = ({ navigation }) => {
 
         <View style={styles.descriptionWraper}>
           <Text style={styles.description}>Description</Text>
-          <Text style={styles.descText}>Notre prestation comporte.</Text>
+          <Text style={styles.descText}>
+            {" "}
+            Photographe passioné capturant des moments uniques et des émotions à
+            travers mon objectif. Comme le portrait, paysage, mariage
+            ,anniversaire ,...
+          </Text>
         </View>
 
-        <CustomSolidBtn title={"Contacter"} onClick={() => {}} />
+        <CustomSolidBtn title={"Contacter"} onClick={() => makePhoneCall()} />
       </View>
     </View>
   );
@@ -74,7 +103,7 @@ const styles = StyleSheet.create({
   },
   ImgContainer: {
     height: "50%",
-    width: "40%",
+    width: "100%",
   },
   image: {
     height: "100%",

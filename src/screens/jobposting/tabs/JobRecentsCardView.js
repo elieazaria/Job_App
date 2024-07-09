@@ -13,13 +13,13 @@ const JobRecentsCardView = () => {
       >
         <View style={styles.image}>
           <Image
-            source={require("../../../images/photography.jpg")}
+            source={require("../../../images/peintre.jpg")}
             style={styles.jobImg}
           />
         </View>
         <View style={styles.textContainer}>
-          <Text style={styles.jobTitle}> Photographe</Text>
-          <Text style={styles.jobDesc}> Notre prestation</Text>
+          <Text style={styles.jobTitle}> Artiste peintre</Text>
+          <Text style={styles.jobDesc}> Mevasoa Raotonirina</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -36,8 +36,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: SIZES.medium,
     borderRadius: SIZES.small,
-    backgroundColor: COLORS.secondary,
-    shadowColor: COLORS.lightWhite,
+    backgroundColor: COLORS.tertiary,
+    shadowColor: "#000",
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    elevation: 3,
   },
   image: {
     width: 100,

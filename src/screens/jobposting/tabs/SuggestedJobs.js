@@ -39,7 +39,7 @@ const SuggestedJobs = () => {
         data={data}
         horizontal
         renderItem={({ item }) => <JobCardView />}
-        contentContainerStyle={{ columnGap: 5 }}
+        contentContainerStyle={{ columnGap: 5, paddingRight: 20 }}
       />
     </View>
   );
